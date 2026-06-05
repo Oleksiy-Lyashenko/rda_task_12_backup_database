@@ -1,8 +1,5 @@
 #! /bin/bash
 
-export DB_USER=backup
-export DB_PASSWORD=P@ssw0rd
-
 mysqldump -u "$DB_USER" -p"$DB_PASSWORD" --skip-add-drop-table ShopDB --result-file=ShopDBReserve_backup.sql
 mysql -u "$DB_USER" -p"$DB_PASSWORD" ShopDBReserve < ShopDBReserve_backup.sql
 
